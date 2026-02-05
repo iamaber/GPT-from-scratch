@@ -5,7 +5,7 @@ from torch.nn import functional as F
 # hyperparameters
 batch_size = 64  # how many independent sequences will we process in parallel?
 block_size = 256  # what is the maximum context length for predictions?
-max_iters = 5000
+max_iters = 1000
 eval_interval = 500
 learning_rate = 3e-4
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -19,7 +19,7 @@ dropout = 0.2
 torch.manual_seed(1337)
 
 # input data
-with open("./notebook/input.txt", "r", encoding="utf-8") as f:
+with open("../notebook/input.txt", "r", encoding="utf-8") as f:
     text = f.read()
 
 # here are all the unique characters that occur in this text
